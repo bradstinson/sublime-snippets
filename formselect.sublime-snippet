@@ -1,0 +1,17 @@
+<snippet>
+	<content><![CDATA[
+
+    <div class="control-group @if(\$errors->first('${1:field name}')) error @endif">
+    	{{ Form::label( '${1:field_name}', '${2:human_name}', array( 'class' => 'control-label' ) ) }}
+        <div class="controls">
+            {{ Form::select( '${1:field_name}', ${3:options}, Input::old( '${1:field_name}' )) }}
+            {{ \$errors->first('${1:field name}', '<span  class="help-inline">:message</span>') }}            
+        </div>
+    </div>
+
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>formselect</tabTrigger>
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <scope>source.php, text.html.laravel-blade</scope>
+</snippet>
